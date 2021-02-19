@@ -19,7 +19,9 @@
 using namespace std;
 
 void chronofunct(){
-    chrono::duration<int> sek20(20);
+    chrono::duration<int> sek20(20); // 20s, bo okres(duration) domyślnie taktuje sekundami..
+    chrono::duration<int, ratio<60>> min3; // 3min = || int min =3, a ratio do sekundy(60s ==> 1 minuta)..
+
 }
 
 
