@@ -13,11 +13,19 @@
 #include <functional>
 #include <typeinfo>
 #include <set>
+#include <chrono>
 #include "numbers.h"
 
 using namespace std;
 
+void chronofunct(){
+    chrono::duration<int> sek20(20);
+}
+
+
+
 int main(){
+    chronofunct();
     
     return 0;
 }
