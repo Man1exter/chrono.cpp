@@ -49,6 +49,7 @@ void chronoValue(){
     chrono::seconds result = sek - sek;             // 20 - 20 = result..
 
     cout << result.count() << endl;
+    cout << chrono::minutes::period::num << " " << chrono::minutes::period::den << endl;    // 60 & 1 ..
 }
 
 int main(){
