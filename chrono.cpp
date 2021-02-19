@@ -44,10 +44,18 @@ void chronoCout(){
     cout << sek.count() << endl;                    // oznacza =====> ile sekund? (zwraca ilość taktów)..
 }
 
+void chronoValue(){
+    chrono::duration<int> sek(20); 
+    chrono::seconds result = sek - sek;             // 20 - 20 = result..
+
+    cout << result.count() << endl;
+}
+
 int main(){
     chronoBasicFunct();
     chronoSomeDay();
     chronoCout();
+    chronoValue();
     
     return 0;
 }
