@@ -52,11 +52,28 @@ void chronoValue(){
     cout << chrono::minutes::period::num << " " << chrono::minutes::period::den << endl;    // 60 & 1 ..
 }
 
+void chrono10(){
+    cout << chrono::duration<long, ratio<10>>::period::num << " - " << chrono::duration<long, ratio<10>>::period::den << endl;
+    // 10 , 1 bo  ratio<10>  to domyslne ratio , czyli  ratio<10,1>
+    cout << endl;
+}
+
+void chronoTime(){
+    int r;
+    cout << "Millisekundowe konwertowanie ( liczba ) ===> " << endl;
+    cin >> r;
+    chrono::milliseconds mav2(r);
+    cout << " Konwersja z sekund tyle wynosi na (r) sekundy : " << mav2.count() << endl;
+}
+
 int main(){
     chronoBasicFunct();
     chronoSomeDay();
     chronoCout();
     chronoValue();
+    chrono10();
+
+    chronoTime();
     
     return 0;
 }
