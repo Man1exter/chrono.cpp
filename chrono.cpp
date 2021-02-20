@@ -3,6 +3,7 @@
 #include <vector>
 #include <map>
 #include <set>
+#include <iomanip>   //setw..
 #include <list>
 #include <forward_list>
 #include <typeinfo>
@@ -59,12 +60,42 @@ void chrono10(){
 }
 
 void chronoTime(){
-    int r;
+    using namespace chrono;
+    chrono::duration<int> r(20); 
+
     cout << "Millisekundowe konwertowanie ( liczba ) ===> " << endl;
-    cin >> r;
     chrono::milliseconds mav2(r);
     cout << " Konwersja z sekund tyle wynosi na (r) sekundy : " << mav2.count() << endl;
+    cout << endl;
+    milliseconds sothing(123456789);
+
+    hours hh = duration_cast<hours> (sothing);
+    cout << "Godzinowo: "<< hh.count() << endl;
+    
+    minutes mm = duration_cast<minutes> (sothing % chrono::hours(1));
+    cout << "Minutowo: "<< mm.count() << endl;
+
+    seconds ss = duration_cast<seconds> (sothing % chrono::minutes(1));
+    cout << "Sekundowo: "<< ss.count() << endl;
+
+     cout << " Godzinowo: ===> "<< hh.count() << " Minutowo: ===> "<< mm.count() << " Sekundowo: ===> "<< ss.count() << endl;
 }
+
+void chronoClock(){
+    using namespace chrono;
+                                      // 3 dostepne zegary w systemie //
+    //chrono::system_clock;                    // PODSTAWOWY..
+    //chrono::high_resolution_clock;           // DOKLADNIEJSZY..
+    //chrono::steady_clock;                    // MIAROWY.. (niemalejacy,nie da sie go cofac..)
+
+    cout << endl;
+
+    auto start = system_clock::now();
+    while(system_clock::now() < start + milliseconds(25)){
+    cout << setw(4) << " o...o ";
+    }
+}
+
 
 int main(){
     chronoBasicFunct();
@@ -74,6 +105,7 @@ int main(){
     chrono10();
 
     chronoTime();
+    chronoClock();
     
     return 0;
 }
