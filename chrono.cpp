@@ -15,6 +15,7 @@
 #include <typeinfo>
 #include <set>
 #include <chrono>
+#include <thread>
 #include "numbers.h"
 
 using namespace std;
@@ -105,6 +106,18 @@ void chronoClock(){
 
 }
 
+void chronoWakeUp(){
+    using namespace chrono;
+
+    cout << endl;
+
+    this_thread::sleep_for(seconds(5));
+    cout << "Pospalem 5 sekund dluzej.." << endl;
+
+    this_thread::sleep_for(seconds(5));
+    cout << "Jednak znowu 5 sekund dluzej.." << endl;
+}
+
 
 int main(){
     chronoBasicFunct();
@@ -115,6 +128,7 @@ int main(){
 
     chronoTime();
     chronoClock();
+    chronoWakeUp();
     
     return 0;
 }
