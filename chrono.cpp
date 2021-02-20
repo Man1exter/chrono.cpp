@@ -129,8 +129,13 @@ void chronoTimePeople(){
     using namespace chrono;
     auto start = system_clock::now();
 
+    cout << endl;
+    cout << endl;
+
+    cout << "AKTUALNA DATA SYSTEMOWA : " << endl;
+
     char str[100];
-    auto turn = system_clock::to_time_turn(start);
+    auto turn = system_clock::to_time_t(start);
     ctime_s(str, sizeof(str), &turn);
     cout << str << endl;
 
