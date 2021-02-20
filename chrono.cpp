@@ -97,7 +97,12 @@ void chronoClock(){
 
     cout << endl;
     cout << endl;
-    
+
+    auto start2 = high_resolution_clock::now();
+    while(high_resolution_clock::now() < start2 + milliseconds(25)){
+        cout << setw(0.5) << " MAN1EXTER ";
+    } // 2 czesc tego samego co u gory setw daje rzadkosc wystepu..
+
 }
 
 
