@@ -92,8 +92,12 @@ void chronoClock(){
 
     auto start = system_clock::now();
     while(system_clock::now() < start + milliseconds(25)){
-    cout << setw(4) << " o...o ";
-    }
+    cout << setw(4) << " (o..o) ";
+    } // przez 25 milisekund bede sobie wyswietlal (o..o)..
+
+    cout << endl;
+    cout << endl;
+    
 }
 
 
