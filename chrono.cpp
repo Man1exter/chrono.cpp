@@ -100,7 +100,7 @@ void chronoClock(){
     cout << endl;
 
     auto start2 = high_resolution_clock::now();
-    while(high_resolution_clock::now() < start2 + milliseconds(25)){
+    while(high_resolution_clock::now() < start2 + milliseconds(55)){
         cout << setw(0.5) << " MAN1EXTER ";
     } // 2 czesc tego samego co u gory setw daje rzadkosc wystepu..
 
@@ -110,12 +110,13 @@ void chronoWakeUp(){
     using namespace chrono;
 
     cout << endl;
+    cout << endl;
 
-    this_thread::sleep_for(seconds(5));
-    cout << "Pospalem 5 sekund dluzej.." << endl;
+    this_thread::sleep_for(seconds(3));
+    cout << "Pospalem 3 sekundy dluzej.." << endl;
 
-    this_thread::sleep_for(seconds(5));
-    cout << "Jednak znowu 5 sekund dluzej.." << endl;
+    this_thread::sleep_for(seconds(3));
+    cout << "Jednak znowu 3 sekundy dluzej.." << endl;
 }
 
 
