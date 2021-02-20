@@ -119,9 +119,22 @@ void chronoWakeUp(){
     cout << "Jednak znowu 3 sekundy dluzej.." << endl;
 
     this_thread::sleep_until(chrono::high_resolution_clock::now() + seconds(3));
-    cout << "Jednak znowu 3 sekundy dluzej, teraz jestem w doope.." << endl;
+    cout << "Jednak znowu 3 sekundy dluzej, teraz jestem w doopeie.." << endl;
 }
 
+void chronoTimePeople(){
+    // konwersja na czas systemowy wyrazana liczbowo..
+    // str - napis z data systemowa - konwersja napisowa..
+    // watek..
+    using namespace chrono;
+    auto start = system_clock::now();
+
+    char str[100];
+    auto turn = system_clock::to_time_turn(start);
+    ctime_s(str, sizeof(str), &turn);
+    cout << str << endl;
+
+}
 
 int main(){
     chronoBasicFunct();
@@ -133,6 +146,8 @@ int main(){
     chronoTime();
     chronoClock();
     chronoWakeUp();
+
+    chronoTimePeople();
     
     return 0;
 }
