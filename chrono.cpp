@@ -117,6 +117,9 @@ void chronoWakeUp(){
 
     this_thread::sleep_for(seconds(3));
     cout << "Jednak znowu 3 sekundy dluzej.." << endl;
+
+    this_thread::sleep_until(chrono::high_resolution_clock::now() + seconds(3));
+    cout << "Jednak znowu 3 sekundy dluzej, teraz jestem w doope.." << endl;
 }
 
 
